@@ -5,12 +5,12 @@ import s from './FeedbackOptions.module.css';
 export default function FeedbackOptions({ options, onLeaveFeedback }) {
   return (
     <ul className={s.list}>
-      {Object.keys(options).map(key => {
+      {options.map(option => {
         return (
           <FeedbackOption
-            key={key}
-            name={key}
-            onLeaveFeedback={() => onLeaveFeedback(key)}
+            key={option}
+            name={option}
+            onLeaveFeedback={() => onLeaveFeedback(option)}
           />
         );
       })}
@@ -19,10 +19,6 @@ export default function FeedbackOptions({ options, onLeaveFeedback }) {
 }
 
 FeedbackOptions.propTypes = {
-  options: PropTypes.shape({
-    good: PropTypes.number,
-    neutral: PropTypes.number,
-    bad: PropTypes.number,
-  }).isRequired,
+  options: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
   onLeaveFeedback: PropTypes.func.isRequired,
 };
