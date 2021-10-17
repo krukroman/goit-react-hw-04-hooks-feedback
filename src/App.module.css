@@ -1,0 +1,10 @@
+.container {
+  margin-top: 50px;
+  margin-inline: auto;
+  width: 330px;
+}
+
+.infoText {
+  margin-top: 20px;
+  font-size: 18px;
+}
